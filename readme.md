@@ -1,3 +1,4 @@
+//blog 前後台整  前台樣板套用bootstrap 完成基本CRUD
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
