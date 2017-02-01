@@ -9,7 +9,7 @@
         </div>
         <div class="result_content">
             <div class="short_wrap">
-                <a href="{{url('admin/config/create')}}"><i class="fa fa-plus"></i>新增配置</a>
+                <a href="{{url('admin/navs/create')}}"><i class="fa fa-plus"></i>新增導覽列</a>
             </div>
         </div>
     </div>

@@ -11,13 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::group(['middleware' => ['web']], function() {
+	Route::get('/', 'Home\IndexController@index');
+	Route::get('/article/{art_id}', 'Home\IndexController@article');
+	Route::get('/category/{keyword}', 'Home\IndexController@category');
+	Route::post('/search', 'Home\IndexController@search');
+	Route::get('/about', 'Home\IndexController@about');
+	Route::get('/cate/{type}', 'Home\IndexController@cate');
 
-Route::group(['prefix' => 'admin','namespace'=>'Admin','middleware' => ['web']], function() {
-	Route::get('code', 'LoginController@code');
-    Route::any('login', 'LoginController@Login');
+	Route::get('admin/code', 'Admin\LoginController@code');
+    Route::any('admin/login', 'Admin\LoginController@Login');
 });
 Route::group(['prefix' => 'admin','namespace'=>'Admin','middleware' => ['web','admin.login']], function() {
    	Route::get('index', 'IndexController@index');
